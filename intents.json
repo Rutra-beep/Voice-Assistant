@@ -1,0 +1,18 @@
+{"intents": 
+[
+    {"tag": "greeting",
+    "patterns": ["Hey", "Hello", "What's up?", "How is it going?", "Hi"],
+    "response": ["Hello Sir", "Hello, what can i do for you?"]},
+    {"tag": "create_note",
+    "patterns": ["Please create a new note", "New note", "Create a note", "I want to create a note"],
+    "response": [""]},
+    {"tag": "add_todo",
+    "patterns": ["I want ot add a todo", "add a new todo", "add a todo to my list", "new item on mt todo list"],
+    "response": [""]},
+    {"tag": "show_todos",
+    "patterns": ["Show my todos", "What are my todos?", "What is on my todo list?"],
+    "response": [""]},
+    {"tag": "exit",
+    "patterns": ["Bye", "Stop", "Quit", "I want to quit", "Goodbye", "I want to exit", "I have to go"],
+    "response": [""]}
+]}
