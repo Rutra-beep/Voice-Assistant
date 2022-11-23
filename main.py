@@ -4,10 +4,11 @@ from selenium_web import *
 from yt_auto import *
 from news import *
 import randfacts
+from jokes import *
 
 engine = p.init()
 rate = engine.getProperty('rate')
-engine.setProperty('rate', 200)
+engine.setProperty('rate', 250)
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 r = sr.Recognizer()
@@ -37,7 +38,8 @@ with sr.Microphone() as source:
     audio = r.listen(source)
     text2 = r.recognize_google(audio) 
     
-if 'information' in text2:
+if "information" in text2:
+    print('Informationn')
     speak('You need information related to which topic??')
     with sr.Microphone() as source:
         r.energy_threshold = 10000
@@ -57,7 +59,7 @@ elif "news" in text2:
     for i in range(len(arr)):
         print(arr[i])
         speak(arr[i])
-elif 'play' or 'video' in text2:
+elif "play" or "video" in text2:
     speak('You want to play which video?')
     with sr.Microphone() as source:
         r.energy_threshold = 10000
@@ -70,9 +72,9 @@ elif 'play' or 'video' in text2:
 
     assist = music()
     assist.play(video)    
-elif 'fact' or 'facts' in text2:
-    x=randfacts.get_fact()
-    print(x)
-    speak("Did you knwow that, " + x )
-
-    
+elif "joke" or "jokes" in text2:
+    arr = joke()
+    print(arr[0])
+    speak(arr[0])
+    print(arr[1])
+    speak(arr[1])
